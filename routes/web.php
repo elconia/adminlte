@@ -11,6 +11,7 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('table');
 });
@@ -30,4 +31,18 @@ Route::get('/items', function () {
 Route::get('/items/create', function () {
     return view('items.create');
 });
+*/
 
+Route::get('/pertanyaan', 'PertanyaanController@index');
+
+Route::post('/pertanyaan', 'PertanyaanController@store');
+
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
+
+Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show');
+
+Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');
+
+Route::put('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@update');
+
+Route::delete('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@destroy');

@@ -14,9 +14,9 @@ class AddForeignKeysToQuestions extends Migration
     public function up()
     {
         Schema::table('questions', function (Blueprint $table) {
-            $table->unsignedBigInteger('best_answer');
+            $table->unsignedBigInteger('best_answer')->nullable();
             $table->foreign('best_answer')->references('id')->on('answers');
-            $table->unsignedBigInteger('profile_id');
+            $table->unsignedBigInteger('profile_id')->nullable();
             $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
